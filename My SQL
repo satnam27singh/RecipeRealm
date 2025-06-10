@@ -1,0 +1,53 @@
+CREATE DATABASE IF NOT EXISTS reciperealm;
+USE reciperealm;
+
+-- 1. Users Table
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(100),
+    role ENUM('admin', 'contributor', 'explorer') DEFAULT 'explorer'
+);
+
+-- 2. Recipes Table
+CREATE TABLE recipes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100),
+    ingredients TEXT,
+    steps TEXT,
+    image VARCHAR(255),
+    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- 3. Comments/Reviews Table
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    recipe_id INT,
+    user_id INT,
+    comment_text TEXT,
+    rating INT CHECK (rating BETWEEN 1 AND 5),
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (recipe_id) REFERENCES recipes(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- 4. Messages Table (for contributor chat)
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sender_id INT,
+    receiver_id INT,
+    message TEXT,
+    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (sender_id) REFERENCES users(id),
+    FOREIGN KEY (receiver_id) REFERENCES users(id)
+);
+
+-- 5. System Settings (admin only)
+CREATE TABLE settings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    config_name VARCHAR(100),
+    config_value VARCHAR(255)
+);
