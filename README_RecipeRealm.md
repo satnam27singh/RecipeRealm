@@ -19,23 +19,21 @@
 
 RecipeRealm/
 ├── WebContent/
-│ ├── index.jsp # Home/Recipe listing
-│ ├── login.jsp # Login page
-│ ├── register.jsp # Registration form
-│ ├── addRecipe.jsp # Add recipe form
-│ └── viewRecipe.jsp # Full recipe with comments
+│   ├── index.jsp
+│   ├── login.jsp
+│   ├── register.jsp
+│   ├── addRecipe.jsp
+│   └── viewRecipe.jsp
 ├── src/com/reciperealm/
-│ ├── LoginServlet.java # Login logic
-│ ├── RegisterServlet.java # Registration logic
-│ ├── AddRecipeServlet.java # Recipe submission logic
-│ ├── DBUtil.java # DB connection helper
-│ └── AdminServlet.java # Admin moderation logic
+│   ├── LoginServlet.java
+│   ├── RegisterServlet.java
+│   ├── AddRecipeServlet.java
+│   ├── DBUtil.java
+│   └── AdminServlet.java
 ├── WEB-INF/
-│ └── web.xml # Deployment descriptor
+│   └── web.xml
 ├── lib/
-│ └── mysql-connector.jar # JDBC driver
-├── SQL/
-│ └── RecipeRealm_DB_Schema.sql # SQL script for database setup
+│   └── mysql-connector.jar
 
 
 ---
