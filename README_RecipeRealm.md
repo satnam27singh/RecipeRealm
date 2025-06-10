@@ -104,7 +104,7 @@ http://localhost:8080/RecipeRealm
 
 ## 📍 Project Link
 
-🔗 GitHub Repository: [https://github.com/AbhiZhekSharma/RecipeRealm.git](https://github.com/AbhiZhekSharma/RecipeRealm.git)
+🔗 GitHub Repository: https://github.com/satnam27singh/RecipeRealm.git
 
 ---
 
@@ -125,13 +125,4 @@ If the server doesn’t start:
 
 ---
 
-## 📝 Notes
-
-- ✅ Ready for Review 2
-- ✅ Functionality complete
-- ✅ Validations implemented
-- ✅ JDBC connected
-- ✅ GitHub updated
-
----
 
